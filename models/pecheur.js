@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+
 const pecheurSchema = new mongoose.Schema({
     matricule: { type: String, unique: true, required: true },
     nom: { type: String, required: true },
