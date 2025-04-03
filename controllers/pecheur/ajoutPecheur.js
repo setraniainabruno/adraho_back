@@ -12,15 +12,15 @@ const matMagic = (nom, prenom) => {
     const somme = [...pM].reduce((acc, char) => acc + char.charCodeAt(0), 0);
     pM = somme.toString();
   }
-  
+
   // S'assurer qu'on a au moins 3 consonnes
-  const troisConsonnes = consonnes.length >= 3 
-    ? consonnes.slice(0, 3).join('') 
+  const troisConsonnes = consonnes.length >= 3
+    ? consonnes.slice(0, 3).join('')
     : (consonnes.join('') + 'XXX').slice(0, 3);
-  
+
   // S'assurer que pM a 3 caractères
   const troisChiffres = pM.padStart(3, '0').slice(-3);
-  
+
   return troisConsonnes + troisChiffres;
 }
 
@@ -47,10 +47,12 @@ const genererUniqueMatricule = async (baseMatricule) => {
 };
 
 const ajouterPecheur = async (req, res) => {
+  console.log(req.body)
   try {
     const { nom, prenom, CIN, adresse, phone, enginePeche, anneeEntree, zonePeche } = req.body;
 
     if (!nom || !prenom || !phone || !enginePeche || !zonePeche) {
+      console.log('Les champs nom, prenom, phone, enginePeche et zonePeche sont obligatoires')
       return res.status(400).json({
         message: 'Les champs nom, prenom, phone, enginePeche et zonePeche sont obligatoires'
       });
@@ -62,6 +64,7 @@ const ajouterPecheur = async (req, res) => {
     // Vérification du téléphone
     const phoneExiste = await Pecheur.findOne({ phone });
     if (phoneExiste) {
+      console.log('Ce numéro de téléphone est déjà utilisé par un autre pêcheur')
       return res.status(400).json({
         message: 'Ce numéro de téléphone est déjà utilisé par un autre pêcheur'
       });
@@ -82,7 +85,7 @@ const ajouterPecheur = async (req, res) => {
       zonePeche,
     });
 
-    const result = await pecheur.save(); 
+    const result = await pecheur.save();
 
     res.status(201).json({
       message: 'Pêcheur ajouté avec succès',
