@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const { migrationSchema } = require('../utils/migration');
 require('dotenv').config();
 
 class Database {
@@ -7,7 +6,6 @@ class Database {
         const mongoURL = process.env.MONGO_URL;
         try {
             const conn = await mongoose.connect(mongoURL);
-            migrationSchema();
             console.log(`MongoDB connecté : ${conn.connection.host}`);
         } catch (error) {
             console.error('Erreur de connexion à MongoDB:', error);
