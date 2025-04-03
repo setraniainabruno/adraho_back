@@ -2,7 +2,7 @@ const Pecheur = require('../../models/pecheur');
 
 const ajouterPecheur = async (req, res) => {
   try {
-    const { matricule, nom, prenom, adresse, phone, enginePeche, anneeEntree, zonePeche } = req.body;
+    const { matricule, nom, prenom,CIN, adresse, phone, enginePeche, anneeEntree, zonePeche } = req.body;
 
     const photo = req.file ? `/images/${req.file.filename}` : '';
 
@@ -10,6 +10,7 @@ const ajouterPecheur = async (req, res) => {
       matricule,
       nom,
       prenom,
+      CIN,
       adresse,
       phone,
       photo: photo || '',
