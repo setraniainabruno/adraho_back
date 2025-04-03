@@ -1,6 +1,6 @@
 const Acheteur = require("../models/acheteur");
 const FruitDeMer = require("../models/fruitDeMer");
-const FruitDeMerEntree = require("../models/FruitDeMerEntree");
+const FruitDeMerEntree = require("../models/fruitDeMerEntree");
 const FruitDeMerSortie = require("../models/FruitDeMerSortie");
 const Pecheur = require("../models/pecheur");
 const Utilisateur = require("../models/utilisateur");
