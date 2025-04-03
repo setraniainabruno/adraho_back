@@ -39,7 +39,7 @@ app.use('/api/reunions', reunionRoutes);
 app.use('/api/activites', activiteRoutes);
 
 
-const PORT = process.env.PORT || 3000;
+const PORT = 3430;
 app.listen(PORT, () => {
     console.log(`Serveur en écoute sur le port ${PORT}`);
 });

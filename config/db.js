@@ -3,7 +3,7 @@ require('dotenv').config();
 
 class Database {
     static async connect() {
-        const mongoURL = process.env.MONGO_URL;
+        const mongoURL = "mongodb+srv://brunoharison18:xE2NGihtznNYH9Hv@cluster0.cufza.mongodb.net/adraho?retryWrites=true&w=majority&appName=Cluster0";
         try {
             const conn = await mongoose.connect(mongoURL);
             console.log(`MongoDB connecté : ${conn.connection.host}`);
