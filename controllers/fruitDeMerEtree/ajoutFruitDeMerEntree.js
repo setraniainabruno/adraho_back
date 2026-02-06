@@ -2,11 +2,11 @@ const FruitDeMerEntree = require("../../models/fruitDeMerEntree");
 
 const ajouterFruitDeMerEntree = async (req, res) => {
     try {
-        const { matriculePecheur, nomFruitDeMer, prixUnitaire, quantite } = req.body;
+        const { matriculePecheur, idFruitDeMer, prixUnitaire, quantite } = req.body;
         const montant = prixUnitaire * quantite;
         const fruitDeMerEntree = new FruitDeMerEntree({
             matriculePecheur,
-            nomFruitDeMer,
+            idFruitDeMer,
             prixUnitaire,
             quantite,
             montant

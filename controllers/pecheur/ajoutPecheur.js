@@ -51,10 +51,10 @@ const ajouterPecheur = async (req, res) => {
   try {
     const { nom, prenom, CIN, adresse, phone, enginePeche, anneeEntree, zonePeche } = req.body;
 
-    if (!nom || !prenom || !phone || !enginePeche || !zonePeche) {
-      console.log('Les champs nom, prenom, phone, enginePeche et zonePeche sont obligatoires')
+    if (!nom || !prenom || !phone || !enginePeche || !zonePeche || !CIN) {
+      console.log('Les champs nom, prenom, phone, enginePeche, CIN et zonePeche sont obligatoires')
       return res.status(400).json({
-        message: 'Les champs nom, prenom, phone, enginePeche et zonePeche sont obligatoires'
+        message: 'Les champs nom, prenom, phone, enginePeche, CIN et zonePeche sont obligatoires'
       });
     }
 

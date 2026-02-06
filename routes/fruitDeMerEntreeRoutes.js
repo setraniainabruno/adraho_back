@@ -9,7 +9,7 @@ const { supprimerFruitDeMerEntree } = require("../controllers/fruitDeMerEtree/su
 
 
 router.post('/ajouter', ajouterFruitDeMerEntree);
-router.get('/listeParId/:id', listeFruitDeMerEntreeParId);
+router.get('/liste/:id', listeFruitDeMerEntreeParId);
 router.put('/modifier/:id', modifierFruitDeMerEntree);
 router.get('/liste', listeToutFruitDeMerEntree);
 router.delete('/supprimer/:id', supprimerFruitDeMerEntree);

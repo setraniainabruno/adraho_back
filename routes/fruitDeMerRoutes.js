@@ -8,7 +8,7 @@ const { modifierFruitDeMer } = require('../controllers/fruitDeMer/modifieFruitDe
 
 
 router.post('/ajouter', upload.single('photo'), ajouterFruitDeMer);
-router.get('/listeParId/:id', listeFruitDeMerParId);
+router.get('/liste/:id', listeFruitDeMerParId);
 router.get('/liste', listeToutFruiDeMer);
 router.put('/modifier/:id', upload.single('photo'), modifierFruitDeMer);
 

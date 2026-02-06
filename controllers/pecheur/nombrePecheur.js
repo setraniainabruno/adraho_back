@@ -1,19 +1,19 @@
 const Pecheur = require('../../models/pecheur');
 
-const listeToutPecheurs = async (req, res) => {
+const nombrePecheurs = async (req, res) => {
     try {
-        const pecheurs = await Pecheur.find();
+        const total = await Pecheur.countDocuments();
 
         res.status(200).json({
-            pecheurs,
+            total,
         });
     } catch (error) {
         console.log(error);
         res.status(500).json({
-            message: 'Erreur lors de la récupération des pêcheurs',
+            message: 'Erreur lors de la récupération du nombre de pêcheurs',
             error: error.message,
         });
     }
 };
 
-module.exports = { listeToutPecheurs };
+module.exports = { nombrePecheurs };
