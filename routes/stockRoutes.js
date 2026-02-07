@@ -9,7 +9,7 @@ const listeStockParId = require('../controllers/stock/listeStockParId');
 
 router.post('/ajouter', ajouterStock);
 router.get('/liste', listeToutStock);
-router.get('/listeParId/:id', listeStockParId);
+router.get('/liste/:id', listeStockParId);
 router.put('/modifier/:id', modifierStock);
 router.delete('/supprimer/:id', supprimerStock);
 
