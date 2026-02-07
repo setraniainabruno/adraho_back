@@ -15,7 +15,7 @@ const supprimerProduit = async (req, res) => {
             const ancienPhoto = path.join(__dirname, '..', '..', 'public', produit.photo);
             fs.unlink(ancienPhoto, (err) => {
                 if (err) {
-                    consol.log(err);
+                    console.log(err);
                 }
             });
         }
