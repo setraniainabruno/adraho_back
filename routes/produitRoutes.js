@@ -11,7 +11,7 @@ const getProduitsByNomAndFormat = require('../controllers/produit/listeProduitPa
 
 router.post('/ajouter', upload.single('photo'), ajouterProduit);
 router.get('/liste', listeToutProduit);
-router.get('/listeParId/:id', listeProduitParId);
+router.get('/liste/:id', listeProduitParId);
 router.put('/modifier/:id', upload.single('photo'), modifierProduit);
 router.delete('/supprimer/:id', supprimerProduit);
 router.get('/getIdProduit', getProduitsByNomAndFormat)
