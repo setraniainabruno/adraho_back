@@ -12,7 +12,7 @@ const { connexionUtilisateur } = require('../controllers/utilsateur/connexionUti
 router.post('/connexion', connexionUtilisateur);
 router.post('/ajouter', upload.single('photo'), ajouterUtilisateur);
 router.get('/liste', listeToutUtilisateurs);
-router.get('/listeParId/:id', listeUtilisateurParId);
+router.get('/liste/:id', listeUtilisateurParId);
 router.put('/modifier/:id', upload.single('photo'), modifierUtilisateur);
 router.delete('/supprimer/:id', supprimerUtilisateur);
 

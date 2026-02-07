@@ -20,7 +20,7 @@ const ajouterUtilisateur = async (req, res) => {
         });
         const result = await utilisateur.save();
 
-        res.status(201).json({ result });
+        res.status(201).json({ message:"Utilisateur créée avec succès" });
     } catch (error) {
         res.status(500).json({
             message: 'Erreur lors de l\'ajout de l\'utilisateur',
